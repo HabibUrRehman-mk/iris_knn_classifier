@@ -26,15 +26,15 @@ knn = load_and_train_model()
 st.title('Iris flower Classifier using KNN')
 st.write("Enter the flower's measurement to predict the flower specie")
 
-st.sidebar.title("About")
-st.sidebar.write(
-    "This is an Iris flower species predictor created by Habib Ur Rehman "
-    "using KNN and Streamlit."
-)
-st.sidebar.write(
-    "If you have any feedback, feel free to contact: "
-    "📧 mail.habiburrehman@gmail.com"
-)
+# st.sidebar.title("About")
+# st.sidebar.write(
+#     "This is an Iris flower specie predictor created by Habib Ur Rehman "
+#     "using KNN and Streamlit."
+# )
+# st.sidebar.write(
+#     "If you have any feedback, feel free to contact: "
+#     "📧 mail.habiburrehman@gmail.com"
+# )
 s_l=st.number_input("Sepal lenght (cm)",min_value=0.0,format='%.2f')
 s_w=st.number_input("Sepal width (cm)",min_value=0.0,format='%.2f')
 p_l=st.number_input("Petal lenght (cm)",min_value=0.0,format='%.2f')
@@ -44,6 +44,12 @@ y_pred=knn.predict([[s_l,s_w,p_l,p_w]])
 
 if st.button("Predict"):
     st.success(f"The specie is {y_pred[0]} ")
+
+st.write(
+    "If you have any feedback, feel free to contact: "
+    "📧 mail.habiburrehman@gmail.com"
+)
+
 
 
 
