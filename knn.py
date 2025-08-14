@@ -42,13 +42,16 @@ p_w=st.number_input("Petal width (cm)",min_value=0.0,format='%.2f')
 
 y_pred=knn.predict([[s_l,s_w,p_l,p_w]])
 
-if st.button("Predict"):
+if st.button("Predict") & s_l=s_w=p_l=p_w=0:
+    st.error("Enter the measurements to predict")
+elif st.button("Predict") :
     st.success(f"The specie is {y_pred[0]} ")
 
 st.write(
     "If you have any feedback, feel free to contact: "
     "📧 mail.habiburrehman@gmail.com"
 )
+
 
 
 
